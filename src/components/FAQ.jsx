@@ -1,4 +1,3 @@
-// src/components/FAQ.jsx
 import React, { useState } from "react";
 
 const faqs = [
@@ -11,21 +10,48 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="faq" className="bg-slate-50 py-16">
-      <div className="container mx-auto px-6">
-        <h2 className="text-2xl font-bold text-slate-900">Frequently asked questions</h2>
-        <div className="mt-6 space-y-3">
+    <section id="faq" className="bg-slate-50 py-16 overflow-x-hidden">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 text-center">
+          Frequently asked questions
+        </h2>
+
+        <div className="mt-8 space-y-4">
           {faqs.map((f, i) => (
-            <div key={f.q} className="rounded-lg border bg-white p-4">
+            <div
+              key={f.q}
+              className={`rounded-lg border p-4 transition-colors duration-300 ${
+                openIndex === i ? "bg-amber-500" : "bg-white"
+              }`}
+            >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full text-left flex items-center justify-between"
+                className="w-full text-left flex items-center justify-between focus:outline-none"
                 aria-expanded={openIndex === i}
               >
-                <span className="font-medium text-slate-800">{f.q}</span>
-                <span className="text-slate-500">{openIndex === i ? "−" : "+"}</span>
+                <span
+                  className={`transition-colors duration-300 ${
+                    openIndex === i ? "font-bold text-white" : "font-medium text-slate-800"
+                  } text-base sm:text-lg md:text-xl`}
+                >
+                  {f.q}
+                </span>
+                <span
+                  className={`transition-transform duration-300 text-slate-500 text-lg`}
+                >
+                  {openIndex === i ? "−" : "+"}
+                </span>
               </button>
-              {openIndex === i && <p className="mt-3 text-slate-600">{f.a}</p>}
+              
+              <div
+                className={`overflow-hidden transition-all duration-300 mt-2`}
+                style={{ maxHeight: openIndex === i ? "200px" : "0" }}
+              >
+                <p className="text-slate-700 text-base sm:text-lg md:text-lg mt-2">
+                  {f.a}
+                </p>
+              </div>
             </div>
           ))}
         </div>
