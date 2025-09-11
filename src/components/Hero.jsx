@@ -1,42 +1,37 @@
+import React from 'react'
+import Button from "./Button";
+
 export default function Hero() {
-    return (
-        <section className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20 px-6">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+  return (
+    <header className="container mx-auto px-6 py-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+      {/* Left content */}
+      <div className="lg:w-1/2">
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900">
+          Launch your SaaS in days, not weeks.
+        </h1>
+        <p className="mt-6 text-lg text-slate-600 max-w-lg">
+          A modern, responsive landing page template built with React + Tailwind v4 — 
+          designed for indie hackers and startup founders who need to move fast.
+        </p>
 
+        <div className="mt-8 flex gap-4">
+          <Button href="#pricing" variant="primary">
+            Get Started
+          </Button>
+          <Button href="#demo" variant="secondary">
+            Live Demo
+          </Button>
+        </div>
+      </div>
 
-                {/* Text Content */}
-                <div className="text-center md:text-left md:w-1/2 space-y-6">
-                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-                        Launch Your SaaS Faster 🚀
-                    </h1>
-                    <p className="text-lg md:text-xl text-white/90">
-                        A clean, modern landing page template built with React + Tailwind.
-                        Perfect for startups, indie hackers, and Sass products.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a
-                            href="#pricing"
-                            className="px-6 py-3 rounded-xl bg-white text-indigo-600 font-semibold hover:bg-gray-100 transition"
-                        >
-                            Get Started
-                        </a>
-                        <a
-                            href="#features"
-                            className="px-6 py-3 rounded-xl border border-white/50 font-semibold hover:bg-white/10 transition"
-                        >
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-
-
-                {/* Image / Screenshot Placeholder */}
-                <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
-                    <div className="w-[90%] h-64 md:h-80 bg-white/10 rounded-2xl border border-white/20 flex items-center justify-center">
-                        <span className="text-white/70">[ SaaS Screenshot Here ]</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+      {/* Right image */}
+      <div className="lg:w-1/2">
+        <div className="w-full rounded-2xl shadow-lg p-6 bg-white">
+          <div className="h-64 bg-slate-100 rounded-md flex items-center justify-center">
+            <span className="text-slate-400">Screenshot / Illustration</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 }
