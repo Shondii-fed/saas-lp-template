@@ -27,8 +27,9 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full text-left flex items-center justify-between focus:outline-none"
                 aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
+                className="w-full text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-1 rounded"
               >
                 <span
                   className={`transition-colors duration-300 ${
@@ -39,13 +40,15 @@ export default function FAQ() {
                 </span>
                 <span
                   className={`transition-transform duration-300 text-slate-500 text-lg`}
+                  aria-hidden="true"
                 >
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>
               
               <div
-                className={`overflow-hidden transition-all duration-300 mt-2`}
+                id={`faq-answer-${i}`}
+                className="overflow-hidden transition-all duration-300 mt-2"
                 style={{ maxHeight: openIndex === i ? "200px" : "0" }}
               >
                 <p className="text-slate-700 text-base sm:text-lg md:text-lg mt-2">

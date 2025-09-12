@@ -18,16 +18,16 @@ export default function Hero() {
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
             <Button 
-              href="#pricing" 
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition" 
+              href="#pricing"
               variant="primary"
+              ariaLabel="Go to pricing section"
             >
               Get Started
             </Button>
             <Button 
               href="#demo"
-              className="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 rounded-lg transition"
               variant="secondary"
+              ariaLabel="Go to live demo section"
             >
               Live Demo
             </Button>
@@ -38,7 +38,9 @@ export default function Hero() {
         <div className="lg:w-1/2 w-full flex justify-center lg:justify-end">
           <div className="w-full max-w-md rounded-2xl shadow-lg p-6 bg-white">
             <div className="aspect-[16/9] w-full bg-slate-100 rounded-md flex items-center justify-center">
-              <span className="text-slate-400">Screenshot / Illustration</span>
+              {/* Comment this span below out when an image is in place and uncomment when there isn't one */}
+              {/* <span className="text-slate-400">Replace with your image</span> */}
+              <img src="./public/assets/Features_Screenshot.png" alt="Product screenshot placeholder"/>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function BackToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 400); // Trigger after Hero
+      setIsVisible(window.scrollY > 400); // Trigger after Hero section
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -26,11 +26,11 @@ export default function BackToTop() {
         transform transition-all duration-300
         ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'}
         hover:bg-indigo-700 hover:scale-105
-        focus:outline-none focus:ring-2 focus:ring-indigo-400
+        focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2
       `}
       aria-label="Back to top"
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp className="h-5 w-5" aria-hidden="true" />
     </button>
   );
 }
