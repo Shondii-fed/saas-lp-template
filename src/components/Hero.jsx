@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="aspect-[16/9] w-full bg-slate-100 rounded-md flex items-center justify-center">
               {/* Comment this span below out when an image is in place and uncomment when there isn't one */}
               {/* <span className="text-slate-400">Replace with your image</span> */}
-              <img src="./public/assets/Features_Screenshot.png" alt="Product screenshot placeholder"/>
+              <img src="./demo/Features_Screenshot.png" alt="Product screenshot placeholder"/>
             </div>
           </div>
         </div>
