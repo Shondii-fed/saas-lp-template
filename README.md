@@ -2,7 +2,12 @@
 
 A modern, responsive landing page template built with **React** and **Tailwind CSS v4**. Perfect for startups, indie hackers, or SaaS products that want to launch fast without writing custom code.
 
-![Placeholder Screenshot](./assets/screenshot.png)
+## Demo
+
+![Desktop Screenshot](./demo/Desktop_Screenshot.png)
+![Tablet Screenshot](./demo/Tablet_Screenshot.png)
+![Mobile Screenshot](./demo/Mobile_Screenshot.png)
+Demo link [Saasify Landing Page Template Live Demo](https://saasify-lp.netlify.app/)
 
 ---
 
